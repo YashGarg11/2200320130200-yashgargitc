@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int basic;
+    char grade;
+    float hra, da, allow, pf, totalSalary;
+
+    printf("Enter the basic salary: ");
+    scanf("%d", &basic);
+
+    printf("Enter the grade: ");
+    scanf(" %c", &grade);
+
+    hra = 0.2 * basic;
+    da = 0.5 * basic;
+
+    if (grade == 'A') {
+        allow = 1700;
+    } else if (grade == 'B') {
+        allow = 1500;
+    } else {
+        allow = 1300;
+    }
+
+    pf = 0.11 * basic;
+
+    totalSalary = basic + hra + da + allow - pf;
+
+    int roundedSalary = (int)totalSalary;
+
+    printf("Total Salary: %d\n", roundedSalary);
+
+    return 0;
+}
